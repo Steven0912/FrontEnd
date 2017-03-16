@@ -1,0 +1,148 @@
+-gallery_images = ["club-sandwich","papas","hamburger","panini","hot-cakes"]
+!!!5
+%html{class:"no-js", lang:"es"}
+  %head
+    %meta{charset:"utf-8"}
+    %title La mejor comida en restaurante
+    %meta{name:"description", content:"Come rico en el mejor retaurante de la ciudad, servivio de primera."}
+    %link{rel:"stylesheet", href:"css/normalize.css"}
+    %link{rel:"stylesheet", href:"css/bootstrap.css"}
+    %link{rel:"stylesheet", href:"https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css"}
+    %link{rel:"stylesheet", href:"css/style.css"}
+    %link{href:"https://fonts.googleapis.com/css?family=Dancing+Script", rel:"stylesheet", type:"text/css"}
+    %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+    %meta{:"data-name" => "image-counter", content:"#{gallery_images.size - 1}"}
+    %script{src:"js/vendor/modernizr-2.8.3.min.js"}
+  %body
+    ="<!--[if lt IE 9]>"
+    %p{class:"browserupgrade"}
+      Estás usando un navegador
+      %strong desactualizado.
+      Por favor
+      %a{href:"http://browsehappy.com/"}
+        actualiza tu navegador
+        para una mejor experiencia
+    ="<![endif]-->"
+
+    .video-container
+      %video{autoplay:true, width:"1280", height:"720",poster:"videos/images/bbq.jpg",loop:true}
+        %source{type:"video/mp4",src:"videos/mp4/bbq.mp4"}
+        %source{type:"video/webm",src:"videos/webm/bbq.webm"}
+
+    // Primer container - Título principal de la página HOME
+    .row.middle-xs.full-height.center-xs.up.relative#home
+      .col-xs-12
+        .box.white-text
+          %img{src:"imgs/logo.png", width:200}
+          %h1.dancing-script.title.no-margin Restaurante Happy Happy
+          %p#is_open
+            %i.glyphicon.glyphicon-time
+            %span.text Abierto ahora
+
+      // Hijo de título principal - Menú de navegación
+      %nav.fixed.top.right.navigation.white-text#navigation
+        -menu = [{title:"Inicio",link:"#home"}, {title:"Menú",link:"#menu"}, {title:"Galería",link:"#gallery"}, {title:"Contacto",link:"#contact"}, {title:"Cómo llegar",link:"#location"}]
+        %ul.list-inline
+          -menu.each do |item|
+            %li
+              %a{href:item[:link]}= item[:title]
+
+      // Hijo de título principal - Texto de la parte inferior
+      .absolute.black.large-padding.white-text.full-width#description
+        .row.middle-xs.center-xs
+
+          // Mensaje
+          .col-xs-7.col-sm-6.white-text.medium
+            Atención cálida y comida preparada por artistas
+
+          // Menú fixed
+          .col-xs.hidden#stickyNavigation
+            .box
+              %nav.text-right.navigation#responsive-nav
+                %i.glyphicon.glyphicon-menu-hamburger.white-text.subtitle.glyphicon-remove#menu-opener
+                %ul.list-inline
+                  -menu.each do |item|
+                    %li
+                      %a.menu-link{href:item[:link]}= item[:title]
+
+    // Segundo container - galeria en grilla MENÚ
+    .text-center.relative#menu
+      .absolute.white#menu-title
+        %h2.dancing-script.title Menú
+      -menu_photos = [{title: "Club Sandwich", pricing: "10.00",image:"club-sandwich"},
+      {title: "Combo hamburguesa", pricing: "50.00",image:"combo"},
+      {title: "Hamburguesa", pricing: "20.00",image:"hamburger"},
+      {title: "Hot cakes", pricing: "30.00",image:"hot-cakes"},
+      {title: "Panini", pricing: "15.00",image:"panini"},
+      {title: "Papas", pricing: "10.00",image:"papas"},
+      {title: "Club Sandwich", pricing: "10.00",image:"club-sandwich"},
+      {title: "Hamburguesa", pricing: "20.00",image:"hamburger"}]
+
+      // Cada item de la grilla, con un ciclo for
+      .row
+        -menu_photos.each do |photo|
+          .col-md-4.col-lg-3.col-sm-6.col-xs12.food{style:"background-image:url(imgs/food/#{photo[:image]}-thumb.jpg)"}
+            .screen
+              .row.middle-xs.full-height
+                .col-xs-12
+                  %h3.dancing-script.white-text.subtitle= photo[:title]
+                  %p.no-margin.medium.white-text= "$ "+ photo[:pricing]
+
+    // Tercer Container - SLIDER
+    #gallery
+      .inner
+        -gallery_images.each do |image|
+          .image{style:"background-image:url(imgs/food/#{image}.jpg)"}
+
+    // Cuarto Container - CARD
+    .container
+      .card.white.relative.black-text.text-center
+        %h3.medium.slim
+          En
+          %strong.dancing-script.medium Restaurante Happy
+          cocinar no es una profesión, no es una técnica, es un
+          %strong.dancing-script.medium arte
+        %p.top-space
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          %strong.dancing-script.medium Steven - Ceballos
+
+    // Quinto Container FORM
+    .black.white-text.full-height#contact
+      .row.middle-xs.full-height
+        .col-xs-12
+          .box
+            %form.step-form#my-form{action:"https://formspree.io/uriel.hdzc@gmail.com",method:"POST"}
+              .row.center-xs
+                .col-xs-12
+                  .box
+                    %p.subtitle Contacto
+                .col-xs-2.col-md-1.text-right
+                  .box
+                    -3.times do |i|
+                      .path-step{class:"#{'active' if i == 0}",data:{position:i+1}}
+                .col-md-5
+                  .box
+                    .fieldset.step.active
+                      %input.input{type:"email",name:"email",placeholder:"Coloca tu correo electrónico",required:true}
+                    .fieldset.step
+                      %input.input{type:"text",name:"name",placeholder:"¿Cuál es tu nombre?",required:true}
+                    .fieldset.step
+                      %textarea.input{name:"body",placeholder:"¿En qué podemos ayudarte?",required:true}
+                      %p.small#info.text-left
+
+    // Sexto Container MAPA
+    #location
+      #map
+      #message.black.large-padding.white-text.text-center.medium Prueba
+
+
+    // Scripts externos
+    %script{src:"https://code.jquery.com/jquery-1.12.0.min.js"}
+    %script
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')
+
+    %script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyC_O2FpxCmsk3TuidiUN0h_ZsFvCz_Cfm4&amp;libraries=places"}
+    %script{src:"js/maps.js"}
+    %script{src:"js/form_object.js"}
+    %script{src:"js/main2.js"}
+    %script{src:"js/steps.js"}

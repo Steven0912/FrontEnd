@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>La mejor comida en restaurante</title>
+    <meta content="Come rico en el mejor retaurante de la ciudad, servivio de primera." name="description">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet" type="text/css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="4" data-name="image-counter">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 9]>
+    <p class="browserupgrade">
+      Estás usando un navegador
+      <strong>desactualizado.</strong>
+      Por favor
+      <a href="http://browsehappy.com/">
+        actualiza tu navegador
+        para una mejor experiencia
+      </a>
+    </p>
+    <![endif]-->
+    <div class="video-container">
+      <video autoplay height="720" loop poster="videos/images/bbq.jpg" width="1280">
+        <source src="videos/mp4/bbq.mp4" type="video/mp4">
+        <source src="videos/webm/bbq.webm" type="video/webm">
+      </video>
+    </div>
+    <!-- / Primer container - Título principal de la página HOME -->
+    <div class="row middle-xs full-height center-xs up relative" id="home">
+      <div class="col-xs-12">
+        <div class="box white-text">
+          <img src="imgs/logo.png" width="200">
+          <h1 class="dancing-script title no-margin">Restaurante Happy Happy</h1>
+          <p id="is_open">
+            <i class="glyphicon glyphicon-time"></i>
+            <span class="text">Abierto ahora</span>
+          </p>
+        </div>
+      </div>
+      <!-- / Hijo de título principal - Menú de navegación -->
+      <nav class="fixed top right navigation white-text" id="navigation">
+        <ul class="list-inline">
+          <li>
+            <a href="#home">Inicio</a>
+          </li>
+          <li>
+            <a href="#menu">Menú</a>
+          </li>
+          <li>
+            <a href="#gallery">Galería</a>
+          </li>
+          <li>
+            <a href="#contact">Contacto</a>
+          </li>
+          <li>
+            <a href="#location">Cómo llegar</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- / Hijo de título principal - Texto de la parte inferior -->
+      <div class="absolute black large-padding white-text full-width" id="description">
+        <div class="row middle-xs center-xs">
+          <!-- / Mensaje -->
+          <div class="col-xs-7 col-sm-6 white-text medium">
+            Atención cálida y comida preparada por artistas
+          </div>
+          <!-- / Menú fixed -->
+          <div class="col-xs hidden" id="stickyNavigation">
+            <div class="box">
+              <nav class="text-right navigation" id="responsive-nav">
+                <i class="glyphicon glyphicon-menu-hamburger white-text subtitle glyphicon-remove" id="menu-opener"></i>
+                <ul class="list-inline">
+                  <li>
+                    <a class="menu-link" href="#home">Inicio</a>
+                  </li>
+                  <li>
+                    <a class="menu-link" href="#menu">Menú</a>
+                  </li>
+                  <li>
+                    <a class="menu-link" href="#gallery">Galería</a>
+                  </li>
+                  <li>
+                    <a class="menu-link" href="#contact">Contacto</a>
+                  </li>
+                  <li>
+                    <a class="menu-link" href="#location">Cómo llegar</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / Segundo container - galeria en grilla MENÚ -->
+    <div class="text-center relative" id="menu">
+      <div class="absolute white" id="menu-title">
+        <h2 class="dancing-script title">Menú</h2>
+      </div>
+      <!-- / Cada item de la grilla, con un ciclo for -->
+      <div class="row">
+        <div class="col-md-4 col-lg-3 col-sm-6 col-xs12 food" style="background-image:url(imgs/food/club-sandwich-thumb.jpg)">
+          <div class="screen">
+            <div class="row middle-xs full-height">
+              <div class="col-xs-12">
+                <h3 class="dancing-script white-text subtitle">Club Sandwich</h3>
+                <p class="no-margin medium white-text">$ 10.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 col-sm-6 col-xs12 food" style="background-image:url(imgs/food/combo-thumb.jpg)">
+          <div class="screen">
+            <div class="row middle-xs full-height">
+              <div class="col-xs-12">
+                <h3 class="dancing-script white-text subtitle">Combo hamburguesa</h3>
+                <p class="no-margin medium white-text">$ 50.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 col-sm-6 col-xs12 food" style="background-image:url(imgs/food/hamburger-thumb.jpg)">
+          <div class="screen">
+            <div class="row middle-xs full-height">
+              <div class="col-xs-12">
+                <h3 class="dancing-script white-text subtitle">Hamburguesa</h3>
+                <p class="no-margin medium white-text">$ 20.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 col-sm-6 col-xs12 food" style="background-image:url(imgs/food/hot-cakes-thumb.jpg)">
+          <div class="screen">
+            <div class="row middle-xs full-height">
+              <div class="col-xs-12">
+                <h3 class="dancing-script white-text subtitle">Hot cakes</h3>
+                <p class="no-margin medium white-text">$ 30.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 col-sm-6 col-xs12 food" style="background-image:url(imgs/food/panini-thumb.jpg)">
+          <div class="screen">
+            <div class="row middle-xs full-height">
+              <div class="col-xs-12">
+                <h3 class="dancing-script white-text subtitle">Panini</h3>
+                <p class="no-margin medium white-text">$ 15.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 col-sm-6 col-xs12 food" style="background-image:url(imgs/food/papas-thumb.jpg)">
+          <div class="screen">
+            <div class="row middle-xs full-height">
+              <div class="col-xs-12">
+                <h3 class="dancing-script white-text subtitle">Papas</h3>
+                <p class="no-margin medium white-text">$ 10.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 col-sm-6 col-xs12 food" style="background-image:url(imgs/food/club-sandwich-thumb.jpg)">
+          <div class="screen">
+            <div class="row middle-xs full-height">
+              <div class="col-xs-12">
+                <h3 class="dancing-script white-text subtitle">Club Sandwich</h3>
+                <p class="no-margin medium white-text">$ 10.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 col-sm-6 col-xs12 food" style="background-image:url(imgs/food/hamburger-thumb.jpg)">
+          <div class="screen">
+            <div class="row middle-xs full-height">
+              <div class="col-xs-12">
+                <h3 class="dancing-script white-text subtitle">Hamburguesa</h3>
+                <p class="no-margin medium white-text">$ 20.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / Tercer Container - SLIDER -->
+    <div id="gallery">
+      <div class="inner">
+        <div class="image" style="background-image:url(imgs/food/club-sandwich.jpg)"></div>
+        <div class="image" style="background-image:url(imgs/food/papas.jpg)"></div>
+        <div class="image" style="background-image:url(imgs/food/hamburger.jpg)"></div>
+        <div class="image" style="background-image:url(imgs/food/panini.jpg)"></div>
+        <div class="image" style="background-image:url(imgs/food/hot-cakes.jpg)"></div>
+      </div>
+    </div>
+    <!-- / Cuarto Container - CARD -->
+    <div class="container">
+      <div class="card white relative black-text text-center">
+        <h3 class="medium slim">
+          En
+          <strong class="dancing-script medium">Restaurante Happy</strong>
+          cocinar no es una profesión, no es una técnica, es un
+          <strong class="dancing-script medium">arte</strong>
+        </h3>
+        <p class="top-space">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <strong class="dancing-script medium">Steven - Ceballos</strong>
+        </p>
+      </div>
+    </div>
+    <!-- / Quinto Container FORM -->
+    <div class="black white-text full-height" id="contact">
+      <div class="row middle-xs full-height">
+        <div class="col-xs-12">
+          <div class="box">
+            <form action="https://formspree.io/uriel.hdzc@gmail.com" class="step-form" id="my-form" method="POST">
+              <div class="row center-xs">
+                <div class="col-xs-12">
+                  <div class="box">
+                    <p class="subtitle">Contacto</p>
+                  </div>
+                </div>
+                <div class="col-xs-2 col-md-1 text-right">
+                  <div class="box">
+                    <div class="active path-step" data-position="1"></div>
+                    <div class="path-step" data-position="2"></div>
+                    <div class="path-step" data-position="3"></div>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <div class="box">
+                    <div class="fieldset step active">
+                      <input class="input" name="email" placeholder="Coloca tu correo electrónico" required type="email">
+                    </div>
+                    <div class="fieldset step">
+                      <input class="input" name="name" placeholder="¿Cuál es tu nombre?" required type="text">
+                    </div>
+                    <div class="fieldset step">
+                      <textarea class="input" name="body" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                      <p class="small text-left" id="info"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / Sexto Container MAPA -->
+    <div id="location">
+      <div id="map"></div>
+      <div class="black large-padding white-text text-center medium" id="message">Prueba</div>
+    </div>
+    <!-- / Scripts externos -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_O2FpxCmsk3TuidiUN0h_ZsFvCz_Cfm4&amp;amp;libraries=places"></script>
+    <script src="js/maps.js"></script>
+    <script src="js/form_object.js"></script>
+    <script src="js/main2.js"></script>
+    <script src="js/steps.js"></script>
+  </body>
+</html>
